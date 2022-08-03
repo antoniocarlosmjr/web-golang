@@ -1,20 +1,11 @@
 package main
 
 import (
-	"html/template"
+	"github.com/antoniocarlosmjr/routes"
 	"net/http"
-
-	"github.com/antoniocarlosmjr/models"
 )
 
-var temp = template.Must(template.ParseGlob("templates/*.html"))
-
 func main() {
-	http.HandleFunc("/", index)
+	routes.CarregaRotas()
 	http.ListenAndServe(":1010", nil)
-}
-
-func index(w http.ResponseWriter, r *http.Request) {
-	allProducts := models.SearchAllProducts()
-	temp.ExecuteTemplate(w, "Index", allProducts)
 }
