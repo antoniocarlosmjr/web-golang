@@ -12,3 +12,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	allProducts := models.SearchAllProducts()
 	temp.ExecuteTemplate(w, "Index", allProducts)
 }
+
+func New(w http.ResponseWriter, r *http.Request) {
+	temp.ExecuteTemplate(w, "New", "")
+}
