@@ -40,8 +40,6 @@ func SearchAllProducts() []Produto {
 
 		produtos = append(produtos, p)
 	}
-
-	temp.ExecuteTemplate(w, "Index", produtos)
 	defer db.Close()
 	return produtos
 }
