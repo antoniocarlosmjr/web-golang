@@ -15,7 +15,7 @@ type Produto struct {
 func SearchAllProducts() []Produto {
 	db := db.ConectaComBancoDeDados()
 
-	selectDeTodosOsProdutos, err := db.Query("select * from produtos")
+	selectDeTodosOsProdutos, err := db.Query("select * from produtos order by id asc")
 	if err != nil {
 		panic(err.Error())
 	}
